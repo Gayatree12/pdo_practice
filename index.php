@@ -36,7 +36,10 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //error reporting; 
     echo '<p>Connected Successfully</p>' . '<br>'; 
     $stmt = $conn->prepare("SELECT * FROM accounts where id<6");  //select records where id is less than 6
-    $stmt->execute(); //execute select statement   
+    $stmt->execute(); //execute select statement
+    $count_rec =$stmt->rowCount();  //count the number of records where id is less than 6
+    echo '<br>';
+    echo "Number of rows affected: $count_rec" . '<br>' . '<br>'; //output number of rows affected   
 
     // set the resulting array to associative
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
