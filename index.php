@@ -54,6 +54,7 @@ catch(PDOException $e) {
 }
 $conn = null; //close connection
 echo "</table>";
+echo "<p>Reference taken from <cite>W3Schools.com</cite></p>"; //citation
 ?> 
 
 
